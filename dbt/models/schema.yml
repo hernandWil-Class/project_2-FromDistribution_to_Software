@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: analysis_cohort
+    columns:
+      - name: snapshot_id
+        data_tests: [not_null]
+      - name: patient_id
+        data_tests: [not_null]
+      - name: observation_id
+        data_tests: [not_null]
+      - name: duration_months
+        data_tests: [not_null]
+      - name: event_observed
+        data_tests: [not_null]
+    data_tests:
+      - unique_snapshot_patient
+
+  - name: snapshot_statistics
+    columns:
+      - name: snapshot_id
+        data_tests: [not_null, unique]
+      - name: n
+        data_tests: [not_null]
+      - name: d
+        data_tests: [not_null]
+      - name: y
+        data_tests: [not_null]

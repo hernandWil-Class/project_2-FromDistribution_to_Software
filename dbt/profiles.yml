@@ -1,0 +1,12 @@
+survivallab_analytics:
+  target: local
+  outputs:
+    local:
+      type: postgres
+      host: "{{ env_var('DBT_PROFILE_HOST', '127.0.0.1') }}"
+      port: "{{ env_var('DBT_PROFILE_PORT', '5432') | int }}"
+      user: "{{ env_var('DBT_PROFILE_USER') }}"
+      password: "{{ env_var('DBT_PROFILE_PASSWORD') }}"
+      dbname: "{{ env_var('DBT_PROFILE_DATABASE') }}"
+      schema: analytics
+      threads: 1

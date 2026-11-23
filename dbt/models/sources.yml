@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: observations
+  - name: meta
+    schema: meta
+    tables:
+      - name: snapshots
+      - name: snapshot_members

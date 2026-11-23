@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Local secrets and generated environments are not source files"
+paths = [
+  '''(^|/)\.env$''',
+  '''(^|/)\.venv/''',
+  '''(^|/)dbt/(target|logs)/''',
+  '''(^|/)(\.test-tmp|\.notebook-runs|\.pytest_cache|\.mypy_cache|\.ruff_cache)/''',
+  '''(^|/)__pycache__/''',
+]
